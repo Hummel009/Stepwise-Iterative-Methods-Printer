@@ -4,7 +4,6 @@ import java.text.DecimalFormat
 import java.util.*
 import kotlin.math.abs
 
-
 fun main() {
 	var method: IterationsMethod
 	val m = Array(10) { DoubleArray(11) }
@@ -38,6 +37,7 @@ fun main() {
 class IterationsMethod(private var m: Array<DoubleArray>, private var isJacobi: Boolean) {
 	private val maxIterations = 10000
 
+	@Suppress("LoopToCallChain")
 	fun print() {
 		val n = m.size
 		for (doubles in m) {
@@ -49,6 +49,7 @@ class IterationsMethod(private var m: Array<DoubleArray>, private var isJacobi: 
 		}
 	}
 
+	@Suppress("LoopToCallChain")
 	fun solve() {
 		var iterations: Int = if (isJacobi) 1 else 0
 
